@@ -3,8 +3,8 @@ import React, { useState } from 'react'
 import { useEffect } from 'react'
 import { baseURL } from '../../constants/constants'
 import { Link } from 'react-router-dom'
-import DataTable from 'datatables.net-dt';
-import AdminNav from '../AdminNavigation/AdminNav'
+
+
 //import $ from 'jQuery';
 
 function Subject() {

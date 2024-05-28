@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { baseURL } from '../../constants/constants'
 import { Link } from 'react-router-dom'
-import AdminNav from '../AdminNavigation/AdminNav'
+
 
 function Classes() {
 

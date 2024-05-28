@@ -1,16 +1,21 @@
 import React from 'react'
-import AdminNav from '../../components/AdminNavigation/AdminNav'
+
 import { Outlet } from 'react-router-dom'
+
+import Dashboardmenu from '../../Comp/DashboardMenu/Dashboardmenu'
+import AdminDashboard from '../../Comp/AdminDashboard/AdminDashboard'
 
 function AdminLayout() {
   return (
     <>
-    <AdminNav/>
-
-    <main>
-      <Outlet/>
-    </main>
     
+
+    <div class="main-container">
+      <Dashboardmenu/>
+        <main>
+          <Outlet/>
+        </main>
+    </div>
     </>
   )
 }

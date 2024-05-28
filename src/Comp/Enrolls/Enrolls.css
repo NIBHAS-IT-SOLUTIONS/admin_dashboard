@@ -16,3 +16,6 @@ table, th, td {
   tr:nth-child(even) {
 	background-color: #D6EEEE;
   }
+  form{
+	display: flex;
+  }

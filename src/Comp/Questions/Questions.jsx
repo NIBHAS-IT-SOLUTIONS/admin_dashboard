@@ -3,7 +3,7 @@ import './Questions.css'
 import { baseURL } from '../../constants/constants'
 import axios from 'axios'
 import Viewquestions from './Viewquestions'
-import AdminNav from '../AdminNavigation/AdminNav'
+
 function Questions() {
 
   const [enrolls,setEnrolls]=useState([])
