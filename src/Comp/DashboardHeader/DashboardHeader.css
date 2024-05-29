@@ -1,0 +1,70 @@
+header { 
+    height: 70px; 
+    width: 100vw; 
+    padding: 0 30px; 
+    background-color: var(--background-color1); 
+    position: fixed; 
+    z-index: 100; 
+    box-shadow: 1px 1px 15px rgba(161, 182, 253, 0.825); 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    } 
+    
+    .logo { 
+    font-family: 'Cherry Bomb One',sans-serif;
+    font-size: 27px; 
+    font-weight: 400; 
+    color: rgb(32, 193, 204); 
+    } 
+    
+    .icn { 
+    height: 30px; 
+    } 
+    .menuicn { 
+    cursor: pointer; 
+    } 
+    
+    .searchbar, 
+    .message, 
+    .logosec { 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    } 
+    
+    .searchbar2 { 
+    display: none; 
+    } 
+    
+    .logosec { 
+    
+    gap: 60px; 
+    } 
+    
+    .searchbar input { 
+    width: 250px; 
+    height: 42px; 
+    border-radius: 50px 0 0 50px; 
+    background-color: var(--background-color3); 
+    padding: 0 20px; 
+    font-size: 15px; 
+    outline: none; 
+    border: none; 
+    } 
+    .searchbtn { 
+    width: 50px; 
+    height: 42px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    border-radius: 0px 50px 50px 0px; 
+    background-color: var(--secondary-color); 
+    cursor: pointer; 
+    } 
+    
+    .message { 
+    gap: 40px; 
+    position: relative; 
+    cursor: pointer; 
+    } 

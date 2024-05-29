@@ -5,17 +5,17 @@ import { Link } from 'react-router-dom';
 function Dashboardmenu() {
 
     useEffect(()=>{
-        let menuicn = document.querySelector(".menuicn"); 
-        let nav = document.querySelector(".navcontainer"); 
+        // let menuicn = document.querySelector(".menuicn"); 
+        // let nav = document.querySelector(".navcontainer"); 
         
-        menuicn.onclick=( () => { 
-            nav.classList.toggle("navclose"); 
-        })
+        // menuicn.onclick=( () => { 
+        //     nav.classList.toggle("navclose"); 
+        // })
       },[])
     
   return (
     <>
-<header>
+{/* <header>
 
 <div class="logosec">
     <div class="logo">Edu rainbow dashboard</div>
@@ -33,7 +33,7 @@ function Dashboardmenu() {
 
 
 
-</header>
+</header> */}
 
 
 <div class="navcontainer">
