@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { baseURL } from '../../constants/constants'
 import { Link } from 'react-router-dom'
-
+import './Classes.css'
 
 function Classes() {
 
@@ -106,7 +106,7 @@ function Classes() {
     return (
         <>
       
-        <div>
+        <div className='classes'>
             <form onSubmit={handleSubmit}  >
                 <input required type="text" onChange={(e) => handleChange(e)} name='classes' />
                 <select required name="enroll" onChange={(e) => handleChange(e)} id="" >

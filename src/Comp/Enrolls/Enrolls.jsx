@@ -55,7 +55,8 @@ console.log(err);
   return (
   <>
   
-       
+       <div className='enrolls'>
+        <h1>Enrolls</h1>
        <form onSubmit={handleSubmit}>
             <input type='text' name='enroll'onChange={(e)=>{setEnroll(e.target.value)}} value={enroll} />
             <br />
@@ -63,11 +64,11 @@ console.log(err);
 							Add enroll
 						</button>
        </form>
-    
+    </div>
 
        <table >
   <tr>
-    <th>Enrolls</th>
+    <th >Enrolls</th>
     <th>options</th>
   </tr>
   {

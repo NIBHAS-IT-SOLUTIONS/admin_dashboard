@@ -1,10 +1,4 @@
-* {
-	margin: 0px; 
-	padding: 0px; 
-	box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
 
-}
 input {
 	outline: 1px solid black;
 	border: 1px solid black;
@@ -18,4 +12,7 @@ table, th, td {
   }
   form{
 	display: flex;
+  }
+  .enrolls{
+	margin: 50px ;
   }

@@ -7,7 +7,7 @@ import Subject from './Comp/Subject/Subject';
 import Questions from './Comp/Questions/Questions';
 import Patternquestions from './Comp/Questions/Patternquestions';
 import AdminLayout from './pages/Admin/AdminLayout';
-import AdminDashboard from './Comp/AdminDashboard/AdminDashboard';
+
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
 
         <Routes>
       
-          <Route path="/admin" element={<AdminDashboard/>} />
+    
 
       <Route path="/" element={<AdminLayout />}>
           <Route index element={<Dashboard />} /> 
