@@ -8,7 +8,7 @@ function Classes() {
 
     const [enrolls, setEnroll] = useState([])
     const [selenr, setEnr] = useState([])
-    
+
     const [classe, setClasse] = useState([])
     const [classes, setclasses] = useState({
 
@@ -85,84 +85,99 @@ function Classes() {
         }
 
     }
-    const deleteUser=async(clas)=>{
+    const deleteUser = async (clas) => {
         var result = window.confirm("Are you sure to delete?");
-        if(result){
-            try{
-                var  res= await axios.post(`${baseURL}delete_classes/`,{
-                    enroll:selenr,
-                    classes:clas
+        if (result) {
+            try {
+                var res = await axios.post(`${baseURL}delete_classes/`, {
+                    enroll: selenr,
+                    classes: clas
                 })
-                 console.log(res.data);
-                  
-                }
-                catch(err){
-      console.log(err);
-                }
+                console.log(res.data);
+
+            }
+            catch (err) {
+                console.log(err);
+            }
         }
 
         console.log(selenr);
     }
     return (
         <>
-      
-        <div className='classes'>
-            <form onSubmit={handleSubmit}  >
-                <input required type="text" onChange={(e) => handleChange(e)} name='classes' />
-                <select required name="enroll" onChange={(e) => handleChange(e)} id="" >
-                    <option value="">select</option>
-                    {
-                        enrolls.map((enroll) => {
-                            return (
-                                <option value={enroll}>{enroll}</option>
-                            )
-                        })
-                    }
 
-                </select>
-                <button type='submit' >
-                    Add Class
-                </button>
-            </form>
-            <h1>
-                Classes
-            </h1>
-
-            <select required name="enroll1" onChange={(e) => handleselect(e)} id="" >
-                <option value="">select</option>
-                {
-                    enrolls.map((enroll) => {
-                        return (
-                            <option value={enroll}>{enroll}</option>
-                        )
-                    })
-                }
-
-            </select>
-            <table >
-                <tr>
-                    <th>Classes</th>
-                    <th>options</th>
-                </tr>
-                {
-                    classe.map((clas) => {
-                        return (
-                            <tr>
-                                <td>{clas}</td>
-                                <td>
-                                    {/* <Link to=""> Edit </Link> */}
-
-                                    <Link onClick={() => { deleteUser(clas) }}> Delete </Link>
-
-                                </td>
-                            </tr>
-                        )
-                    })
-                }
+            <div className='classes'>
 
 
-            </table>
-        </div>
+                <form className='classform' onSubmit={handleSubmit}  >
+                    <input required placeholder='Enter Class' type="text" onChange={(e) => handleChange(e)} name='classes' />
+                    <select required name="enroll" onChange={(e) => handleChange(e)} id="" >
+                        <option value="">Select Enroll Type</option>
+                        {
+                            enrolls.map((enroll) => {
+                                return (
+                                    <option value={enroll}>{enroll}</option>
+                                )
+                            })
+                        }
+
+                    </select>
+
+                    {/*  */}
+
+
+                    <button className='class-btn' type='submit' >
+                        Add Class
+                    </button>
+                </form>
+
+
+
+
+                <div className="table-data">
+
+                    <h1 className='class-heading'>
+                        Classes
+                    </h1>
+
+                    <select className='table-select' required name="enroll1" onChange={(e) => handleselect(e)} id="" >
+                        <option value="">select</option>
+                        {
+                            enrolls.map((enroll) => {
+                                return (
+                                    <option value={enroll}>{enroll}</option>
+                                )
+                            })
+                        }
+
+                    </select>
+
+                    <table >
+                        <tr>
+                            <th>Classes</th>
+                            <th>options</th>
+                        </tr>
+                        {
+                            classe.map((clas) => {
+                                return (
+                                    <tr>
+                                        <td>{clas}</td>
+                                        <td>
+                                            {/* <Link to=""> Edit </Link> */}
+
+                                            <Link onClick={() => { deleteUser(clas) }}> Delete </Link>
+
+                                        </td>
+                                    </tr>
+                                )
+                            })
+                        }
+
+
+                    </table>
+                </div>
+
+            </div>
         </>
     )
 }

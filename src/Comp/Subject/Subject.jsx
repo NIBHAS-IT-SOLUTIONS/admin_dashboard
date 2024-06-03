@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { useEffect } from 'react'
 import { baseURL } from '../../constants/constants'
 import { Link } from 'react-router-dom'
+import './Subject.css'
 
 
 //import $ from 'jQuery';
@@ -161,10 +162,11 @@ function Subject() {
   return (
     <>
   
-    <div> <form onSubmit={handleSubmit}  >
-    <input required type="text" onChange={(e)=>handleChange(e)}  name='subject' />
+    <div className='subcontainer'> 
+        <form className='sub-form' onSubmit={handleSubmit}  >
+    <input required  placeholder='Enter Subject' type="text" onChange={(e)=>handleChange(e)}  name='subject' />
     <select required name="enroll" onChange={(e)=>handleselect(e)} id="" >
-        <option  value="">select</option>
+        <option  value="">Select Enroll Type</option>
         {
             enrolls.map((enroll) => {
                 return (
@@ -175,7 +177,7 @@ function Subject() {
 
     </select>
     <select required name="classes"  onChange={(e)=>handleChange(e)}  id="" >
-        <option  value="">select</option>
+        <option  value="">Select Class</option>
         {
             classes.map((classes) => {
                 return (
@@ -185,12 +187,12 @@ function Subject() {
         }
 
     </select>
-    <button type='submit' >
+    <button className='subject-btn' type='submit' >
         Add Subject
     </button>
 </form>
 
-<h1>Subjects</h1>
+<h1 className='subject-h1'>Subjects</h1>
 {/* <select required name="enroll" onChange={(e)=>handleselenroll(e)} id="" >
         <option  value="">select</option>
         {
@@ -213,9 +215,7 @@ function Subject() {
         }
 
     </select> */}
-    <mytable>
-
-    </mytable>
+  
     <table id='myTable'>
         <tr>
             <th>

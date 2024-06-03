@@ -1,12 +1,18 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { baseURL } from '../../constants/constants'
+import { baseURL } from '../../../constants/constants';
 import { Link } from 'react-router-dom'
 import './Viewquestions.css'
 
 function Viewquestions() {
   const[nkeys,setnkeys]=useState([])
+  const[selkey,setselkey]=useState()
+  
+  const [modu,setmodules]=useState([])
+  const [selmod,setselmod]=useState('')
+  
   const[qid,setQid]=useState([])
+
   const[question,setQuestion]=useState([])
   const[show,setShow]=useState(false)
   const getqtype=async()=>{
@@ -23,12 +29,15 @@ function Viewquestions() {
     getqtype()
   },[])
   const selKeys=async(e)=>{
-    var keyword=e.target.value
+    var enroll_type= e ? e.target.value : selkey
+    setselkey(enroll_type)
     try{
-      var res=await axios.post(`${baseURL}get_normal_qid/`,{keyword})
-      console.log(res.data.normal_questions);
-      setQid(res.data.normal_questions)
-      setShow(false)
+      var res=await axios.post(`${baseURL}get_normal_modules/`,{enroll_type})
+      console.log(res.data[0]);
+      const data=Object.values(res.data);
+      setmodules(data)
+      // setQid(res.data.normal_questions)
+      // setShow(true)
     }
     catch(err){
       console.log(err);
@@ -60,8 +69,39 @@ function Viewquestions() {
       </div>
     );
   };
+
+  const selModules = async (e) => {
+      var keyword=selkey
+      var q_name=e ? e.target.value : selmod
+      setselmod(q_name)
+    console.log(q_name,keyword);
+    try {
+      var res = await axios.post(`${baseURL}get_normal_qid/`, { keyword,q_name })
+      console.log(res.data.normal_questions);
+      setQid(res.data.normal_questions)
+      setShow(true)
+    }
+    catch (err) {
+      console.log(err);
+    }
+
+  }
+  const handleDelete=async(key)=>{
+console.log(key);
+console.log(selkey);
+var key=key
+try{
+  var res= await axios.post(`${baseURL}del_normal/`,{key})
+  console.log(res);
+  selModules()
+}
+catch(err){
+  console.log(err);
+}
+  }
   return (
     <div>
+      <br /><br />
       <h1>Normal Questions</h1>
     <select name="keys" onChange={(e)=>selKeys(e)} id="">
       <option value="">select</option>
@@ -76,6 +116,22 @@ function Viewquestions() {
       }
 
     </select>
+
+    <select name="module" onChange={(e)=>selModules(e)} id="">
+      <option value="">select</option>
+      {
+        modu.map((mod)=>{
+          return(
+            <option key={mod} value={mod}>
+              {mod}
+            </option>
+          )
+        })
+      }
+
+    </select>
+
+
 
     <table >
   <tr>
@@ -129,8 +185,9 @@ function Viewquestions() {
             
           </div>
       </div>
-
+  <button onClick={()=>{handleDelete(question.qid)}}>Delete</button>
 </div>
+
 
 }
     </div>

@@ -1,0 +1,54 @@
+.subcontainer{
+    padding: 10px;
+    width: 550px;
+    height: auto;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(rgba(0, 200, 255, 0.567),rgba(194, 235, 194, 0.545));
+    box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.478);
+    margin:110px 80px;
+}
+.subcontainer .sub-form{
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.sub-form input{
+    margin: auto;
+    padding: 20px;
+    height: 30px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    width: 300px;
+}
+.sub-form select{
+    margin: auto;
+    border-radius: 10px;
+    width: 100px;
+    height: 25px;
+    text-align: center;
+    background-image: linear-gradient(rgba(194, 235, 194, 0.545), rgba(0, 200, 255, 0.567));
+}
+.sub-form .subject-btn{
+    margin: auto;
+    width: 200px;
+    height: 40px;
+    border-radius: 40px;
+    border: 2px solid white;
+    background-image: linear-gradient(to right, rgba(194, 235, 194, 0.545), rgba(0, 200, 255, 0.567));
+    cursor: pointer;
+
+}
+.sub-form .subject-btn:hover{
+    background-image: linear-gradient(to right, rgba(0, 200, 255, 0.567), rgba(194, 235, 194, 0.545));
+
+}
+
+
+.subject-h1{
+    text-align: center;
+    color: white;
+    padding: 10px;
+}

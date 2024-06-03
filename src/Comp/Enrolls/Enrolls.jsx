@@ -56,17 +56,16 @@ console.log(err);
   <>
   
        <div className='enrolls'>
-        <h1>Enrolls</h1>
-       <form onSubmit={handleSubmit}>
-            <input type='text' name='enroll'onChange={(e)=>{setEnroll(e.target.value)}} value={enroll} />
+        <h1 className='enroll-head'>Enrolls</h1>
+       <form className='enroll-form' onSubmit={handleSubmit}>
+            <input type='text' placeholder='Enter Enroll Type' name='enroll'onChange={(e)=>{setEnroll(e.target.value)}} value={enroll} />
             <br />
-            <button type='submit' >
+            <button className='enroll-btn' type='submit' >
 							Add enroll
 						</button>
        </form>
-    </div>
 
-       <table >
+       <table className='enroll-table'>
   <tr>
     <th >Enrolls</th>
     <th>options</th>
@@ -89,6 +88,8 @@ console.log(err);
 
 
 </table>
+</div>
+
     </>
 
   )
