@@ -1,0 +1,87 @@
+.pattern-container {
+  width: 750px;
+  height: auto;
+  border-radius: 30px;
+  gap: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-image: linear-gradient(rgba(0, 200, 255, 0.567), rgba(194, 235, 194, 0.545));
+  box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.478);
+  margin: 110px 80px;
+}
+
+.pattern-container a {
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.pattern-container h1 {
+  text-align: center;
+  color: white;
+}
+
+.pattern-container .pattern-form {
+  gap: 5px;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.pattern-form select {
+  border-radius: 10px;
+  width: 200px;
+  height: 25px;
+  text-align: center;
+  background-image: linear-gradient(rgba(194, 235, 194, 0.545), rgba(0, 200, 255, 0.567));
+}
+
+
+.pattern-form input::file-selector-button {
+  background-image: linear-gradient(rgba(194, 235, 194, 0.545), rgba(0, 200, 255, 0.567));
+  outline: none;
+  border: 1px solid rgb(230, 118, 118);
+  border-radius: 3px;
+}
+
+.pattern-form img {
+  width: 50px;
+
+}
+
+.pattern-form .pattern-btn {
+  width: 200px;
+  height: 40px;
+  border-radius: 40px;
+  border: 2px solid white;
+  background-image: linear-gradient(to right, rgba(194, 235, 194, 0.545), rgba(0, 200, 255, 0.567));
+  cursor: pointer;
+  margin-left: 150px;
+  margin: 50px 210px;
+
+}
+
+.pattern-form .pattern-btn:hover {
+  background-image: linear-gradient(to right, rgba(0, 200, 255, 0.567), rgba(194, 235, 194, 0.545));
+}
+
+.pattern-form .form-inputs {
+  height: auto;
+  gap: 80px;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-inputs input{
+  padding: 20px;
+  height: 30px;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  width: 300px;
+  margin-left: 150px;
+}

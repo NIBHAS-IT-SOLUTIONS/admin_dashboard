@@ -1,0 +1,71 @@
+.q-container{
+	width: 650px;
+    height: auto;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-image: linear-gradient(rgba(0, 200, 255, 0.567), rgba(194, 235, 194, 0.545));
+    box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.478);
+    margin: 110px 80px;
+
+}
+.q-container a{
+    text-align: center;
+    text-decoration: none;
+}
+.q-container h1{
+	text-align: center;
+	color: white;
+	-webkit-text-stroke: 1px rgba(0, 0, 0, 0.659);
+}
+.q-container form{
+	display: flex;
+	flex-direction: column;
+	width: 400px;
+	margin: auto;
+	padding: 10px;
+}
+.q-container select{
+	border-radius: 10px;
+    width: 150px;
+    height: 25px;
+    text-align: center;
+    background-image: linear-gradient(rgba(194, 235, 194, 0.545), rgba(0, 200, 255, 0.567));
+	margin: auto;
+}
+.q-container input {
+	padding: 20px;
+    height: 30px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    width: 300px;
+	margin: auto;
+}
+.q-container textarea{
+	padding: 20px;
+    height: 140px;
+    border: none;
+	overflow: hidden;
+    outline: none;
+    border-radius: 20px;
+    width: 300px;
+	margin: auto;
+	resize: vertical;
+}
+.q-container .q-btn{
+	width: 200px;
+    height: 40px;
+    border-radius: 40px;
+    border: 2px solid white;
+    background-image: linear-gradient(to right, rgba(194, 235, 194, 0.545), rgba(0, 200, 255, 0.567));
+    cursor: pointer;
+	margin: auto;
+}
+.q-container .q-btn:hover{
+background-image: linear-gradient(to right, rgba(0, 200, 255, 0.567), rgba(194, 235, 194, 0.545));
+
+}
+
+

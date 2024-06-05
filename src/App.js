@@ -4,9 +4,11 @@ import Dashboard from './Comp/Dashboard/Dashboard';
 import Enrolls from './Comp/Enrolls/Enrolls';
 import Classes from './Comp/Classes/Classes';
 import Subject from './Comp/Subject/Subject';
-import Questions from './Comp/Questions/Questions';
-import Patternquestions from './Comp/Questions/Patternquestions';
+import Questions from './Comp/Questions/Normals/Questions';
+import Patternquestions from './Comp/Questions/Patterns/Patternquestions';
 import AdminLayout from './pages/Admin/AdminLayout';
+import Patterns from './Comp/Questions/Patterns/Patterns';
+import Viewquestions from './Comp/Questions/Normals/Viewquestions';
 
 
 function App() {
@@ -24,7 +26,9 @@ function App() {
           <Route path='/classes' element={<Classes/>}/>
           <Route path='/subjects' element={  <Subject/>}/>
           <Route path='/questions' element={  <Questions/>}/>
-          <Route path='/patterns' element={  <Patternquestions/>}/> 
+          <Route path='/viewquestions' element={  <Viewquestions/>}/>
+          <Route path='/patterns' element={  <Patterns/>}/> 
+          <Route path='/viewpatterns' element={  <Patternquestions/>}/>
       </Route>
           
         </Routes>

@@ -173,6 +173,10 @@ overflow-y: scroll;
 overflow-x: hidden; 
 transition: all 0.5s ease-in-out; 
 } 
+.nav-upper-options a{
+	text-decoration: none;
+}
+
 .navcontainer::-webkit-scrollbar { 
 display: none; 
 } 

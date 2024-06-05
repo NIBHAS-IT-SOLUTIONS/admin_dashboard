@@ -1,9 +1,11 @@
 import axios from 'axios'
 import React, { useEffect } from 'react'
 import { useState } from 'react'
-import { baseURL } from '../../constants/constants'
+import { baseURL } from '../../../constants/constants';
 import Patternquestions from './Patternquestions'
-import AdminNav from '../AdminNavigation/AdminNav'
+import './Patterns.css'
+import { Link } from 'react-router-dom';
+
 
 function Patterns() {
     const [enrolls,setEnrolls]=useState([])
@@ -14,6 +16,10 @@ function Patterns() {
   const[question,setQuestion]=useState({
 
   })
+
+  
+  
+
   const getEnrolls=async()=>{
     
     try {
@@ -27,8 +33,11 @@ function Patterns() {
   }
   }
   useEffect(() => {
+    
     getEnrolls()
 }, [])
+ 
+
 const getClasses=async(e)=>{
   handleChange(e)
 console.log(e.target.value);
@@ -56,8 +65,13 @@ const handleChange=(event)=>{
       [name]: value
   }));
 }
+
 const onFileChange = (event) => {
+
+    console.log(event.target.files[0]);
+
     const { name, value } = event.target
+    document.getElementById(name).src=URL.createObjectURL(event.target.files[0])
     setQuestion((prevProps) => ({
         ...prevProps,
         [name]:event.target.files[0]
@@ -120,12 +134,14 @@ const handleSubmit=async(event)=>{
   return (
     <>
   
-    <div>
+    <div className='pattern-container'>
+      <br /><br />
         <h1>Patterns</h1>
-        <form onSubmit={handleSubmit} >
+        <Link to={'/viewpatterns'}>View Added Questions👁️‍🗨️</Link>
+        <form className='pattern-form' onSubmit={handleSubmit} >
   
-    <select name="enroll" onChange={(e)=>{getClasses(e)}} id="">
-    <option value="">Select</option>
+    <select required name="enroll" onChange={(e)=>{getClasses(e)}} id="">
+    <option value="">Select Enroll Type</option>
     {
       
         enrolls.map((enroll)=>{
@@ -135,8 +151,8 @@ const handleSubmit=async(event)=>{
         })
       } 
    </select><br />
-    <select name="classes" onChange={(e)=>{getsubjects(e)}} id="">
-    <option value="">Select</option>
+    <select required name="classes" onChange={(e)=>{getsubjects(e)}} id="">
+    <option value="">Select Class</option>
       {
        
         classes.map((clss)=>{
@@ -147,9 +163,9 @@ const handleSubmit=async(event)=>{
       }  
     </select><br />
 
-    <select name="subject" onChange={(e)=>{handleChange(e)}} id="">
+    <select required name="subject" onChange={(e)=>{handleChange(e)}} id="">
 
-    <option value="">Select</option>
+    <option value="">Select Subject</option>
       {
        
         subs.map((sub)=>{
@@ -159,14 +175,29 @@ const handleSubmit=async(event)=>{
         })
       }
 
-    </select><br />
-    <input onChange={(e)=>{handleChange(e)}} name='question_name' type='text'/> <br />
-    <input onChange={(e)=>{handleChange(e)}} name='question' type='text'/> <br />
-    <input onChange={(e)=>{onFileChange(e)}} name='question_image' type='file' accept=".jpg, .jpeg, .png"/> <br />
+    </select>
+    <br />
+    <div className="form-inputs">
+
+   
+    <input required placeholder='Enter Question Topic' onChange={(e)=>{handleChange(e)}} name='question_name' type='text'/> <br />
+    <input required placeholder='Enter Question' onChange={(e)=>{handleChange(e)}} name='question' type='text'/> <br />
+
+    <img  width="50px" alt="Select Question Image" height="auto" id="question_image"  />
+    <input required  onChange={(e)=>{onFileChange(e)}} name='question_image' type='file' accept=".jpg, .jpeg, .png"/> <br />
+    
+    <img  width="50px" alt="Select Option A" height="auto" id="a"  />
     <input onChange={(e)=>{onFileChange(e)}} name='a' type='file' accept=".jpg, .jpeg, .png"/> <br />
+
+    <img  width="50px" alt="Select Option B" height="auto" id="b"  />
     <input onChange={(e)=>{onFileChange(e)}} name='b' type='file' accept=".jpg, .jpeg, .png"/> <br />
+
+    <img  width="50px" alt="Select Option C " height="auto" id="c"  />
     <input onChange={(e)=>{onFileChange(e)}} name='c' type='file'accept=".jpg, .jpeg, .png"/> <br />
+
+    <img  width="50px" alt="Select Option D" height="auto" id="d"  />
     <input onChange={(e)=>{onFileChange(e)}} name='d' type='file' accept=".jpg, .jpeg, .png"/> <br />
+
     <select onChange={(e)=>{handleChange(e)}} name="answer" id="">
       <option value="">Select</option>
       <option value="A">A</option>
@@ -174,13 +205,10 @@ const handleSubmit=async(event)=>{
       <option value="C">C</option>
       <option value="D">D</option>
     </select><br />
-    <input type="submit" value="Add Question" />
+    <button className='pattern-btn' type='submit'value="">Add Question</button>
+    </div>
 </form>
 
-
-
-<Patternquestions/>
-    
     </div>
     </>
   )

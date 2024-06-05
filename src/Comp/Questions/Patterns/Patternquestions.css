@@ -1,0 +1,45 @@
+.pattern-questions {
+    width: 550px;
+    height: auto;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-image: linear-gradient(rgba(0, 200, 255, 0.567), rgba(194, 235, 194, 0.545));
+    box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.478);
+    margin: 110px 80px;
+    gap: 20px;
+    padding: 20px;
+}
+
+.pattern-questions h1 {
+    text-align: center;
+    color: white;
+}
+.pattern-questions .options{
+    width: 400px;
+}
+.options img{
+    
+   gap: 10px;
+}
+
+.pattern-questions select {
+    border-radius: 10px;
+    width: 200px;
+    height: 25px;
+    text-align: center;
+    background-image: linear-gradient(rgba(194, 235, 194, 0.545), rgba(0, 200, 255, 0.567));
+    margin: auto;
+}
+
+.question-container button {
+    background: rgb(240, 72, 72);
+    color: white;
+    width: 80px;
+    height: 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+}

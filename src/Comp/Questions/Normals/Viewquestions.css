@@ -44,3 +44,30 @@
   font-size: 1rem;
   color: #555;
 }
+.view-container{
+  width: 550px;
+  height: auto;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-image: linear-gradient(rgba(0, 200, 255, 0.567), rgba(194, 235, 194, 0.545));
+  box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.478);
+  margin: 110px 80px;
+  padding: 20px;
+  gap: 20px;
+}
+.view-container h1{
+  text-align: center;
+  color: white;
+}
+.view-container select{
+  border-radius: 10px;
+  width: 200px;
+  height: 25px;
+  text-align: center;
+  background-image: linear-gradient(rgba(194, 235, 194, 0.545), rgba(0, 200, 255, 0.567));
+  margin: auto;
+
+}
+
